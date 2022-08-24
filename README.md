@@ -4,8 +4,9 @@ TI CC13xx/CC2538/CC26xx Serial Boot Loader [![Build Status](https://travis-ci.or
 This folder contains a python script that communicates with the boot loader of the Texas Instruments CC2538, CC26xx and CC13xx SoCs (System on Chips).
 It can be used to erase, program, verify and read the flash of those SoCs with a simple USB to serial converter.
 
-*Modified to include setflashmode.sh script to place module into programming mode (in mPCIe slot 1 on Gatway unit) -- see inside script for more details.
-
+************************************************************************************************
+Modified to include setflashmode.sh script to place module into programming mode (in mPCIe slot 1 on Gatway unit) -- see inside script for more details.
+************************************************************************************************
 
 ### Requirements
 
