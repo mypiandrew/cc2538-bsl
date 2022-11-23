@@ -6,6 +6,43 @@ It can be used to erase, program, verify and read the flash of those SoCs with a
 
 ************************************************************************************************
 Modified to include setflashmode.sh script to place module into programming mode (in mPCIe slot 1 on Gatway unit) -- see inside script for more details.
+
+
+
+```
+wget https://github.com/mypiandrew/cc2538-bsl/archive/refs/heads/master.zip
+unzip master.zip
+cd cc2538-bsl-master
+
+wget https://github.com/Koenkk/Z-Stack-firmware/raw/master/coordinator/Z-Stack_3.x.0/bin/CC1352P2_CC2652P_launchpad_coordinator_20220219.zip
+wget https://github.com/Koenkk/Z-Stack-firmware/raw/master/coordinator/Z-Stack_3.x.0/bin/CC2652RB_coordinator_20220219.zip
+
+unzip CC1352P2_CC2652P_launchpad_coordinator_20220219.zip
+unzip CC2652RB_coordinator_20220219.zip
+
+chmod +x setup.py setflashmode.sh
+
+apt-get update
+apt-get install python-pip
+
+pip3 install pyserial
+pip3 install intelhex
+pip3 install python-magic
+
+# >>>>>Edit  mpcie references as applicable in set flash mode
+./setflashmode.sh
+
+# use -p /dev/port-reference to serial port for mpcie socket
+
+# RF STAR version firmware
+./cc2538-bsl.py -evw [-p /dev/ttyS2] CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
+
+# EBYTE version firmware
+./cc2538-bsl.py -evw [-p /dev/ttyS2] CC2652RB_coordinator_20220219.hex
+
+```
+** Power off board when changing mpcie cards**
+
 ************************************************************************************************
 
 ### Requirements
