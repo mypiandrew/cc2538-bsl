@@ -40,6 +40,24 @@ pip3 install python-magic
 # EBYTE version firmware
 ./cc2538-bsl.py -evw [-p /dev/ttyS2] CC2652RB_coordinator_20220219.hex
 
+
+root@raspberrypi:~/cc2538-bsl-master# ./cc2538-bsl.py -evw -p /dev/ttyS2 CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
+Opening port /dev/ttyS2, baud 500000
+Reading data from CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
+Firmware file: Intel Hex
+Connecting to target...
+CC1350 PG2.0 (7x7mm): 352KB Flash, 20KB SRAM, CCFG.BL_CONFIG at 0x00057FD8
+Primary IEEE Address: 00:12:4B:00:25:90:82:4B
+    Performing mass erase
+Erasing all main bank flash sectors
+    Erase done
+Writing 360448 bytes starting at address 0x00000000
+Write 104 bytes at 0x00057F988
+    Write done
+Verifying by comparing CRC32 calculations.
+    Verified (match: 0xddfc152d)
+
+
 ```
 ** Power off board when changing mpcie cards**
 
