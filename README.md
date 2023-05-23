@@ -4,6 +4,8 @@ TI CC13xx/CC2538/CC26xx Serial Boot Loader [![Build Status](https://travis-ci.or
 This folder contains a python script that communicates with the boot loader of the Texas Instruments CC2538, CC26xx and CC13xx SoCs (System on Chips).
 It can be used to erase, program, verify and read the flash of those SoCs with a simple USB to serial converter.
 
+This works on Raspbian Buster 4.19 -- May not work on Bullseye!
+
 ************************************************************************************************
 Modified to include setflashmode.sh script to place module into programming mode (in mPCIe slot 1 on Gatway unit) -- see inside script for more details.
 
@@ -23,7 +25,7 @@ unzip CC2652RB_coordinator_20220219.zip
 chmod +x setup.py setflashmode.sh
 
 apt-get update
-apt-get install python-pip
+apt install python3-venv python3-pip
 
 pip3 install pyserial
 pip3 install intelhex
@@ -35,14 +37,14 @@ pip3 install python-magic
 # use -p /dev/port-reference to serial port for mpcie socket
 
 # RF STAR version firmware
-./cc2538-bsl.py -evw [-p /dev/ttyS2] CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
+./cc2538-bsl.py -evw [-p /dev/ttyUSB0] CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
 
 # EBYTE version firmware
-./cc2538-bsl.py -evw [-p /dev/ttyS2] CC2652RB_coordinator_20220219.hex
+./cc2538-bsl.py -evw [-p /dev/ttyUSB0] CC2652RB_coordinator_20220219.hex
 
 
-root@raspberrypi:~/cc2538-bsl-master# ./cc2538-bsl.py -evw -p /dev/ttyS2 CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
-Opening port /dev/ttyS2, baud 500000
+root@raspberrypi:~/cc2538-bsl-master# ./cc2538-bsl.py -evw -p /dev/ttyUSB9 CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
+Opening port /dev/ttyUSB0, baud 500000
 Reading data from CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
 Firmware file: Intel Hex
 Connecting to target...
