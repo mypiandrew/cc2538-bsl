@@ -43,7 +43,7 @@ pip3 install python-magic
 ./cc2538-bsl.py -evw [-p /dev/ttyUSB0] CC2652RB_coordinator_20220219.hex
 
 
-root@raspberrypi:~/cc2538-bsl-master# ./cc2538-bsl.py -evw -p /dev/ttyUSB9 CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
+root@raspberrypi:~/cc2538-bsl-master# ./cc2538-bsl.py -evw -p /dev/ttyUSB0 CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
 Opening port /dev/ttyUSB0, baud 500000
 Reading data from CC1352P2_CC2652P_launchpad_coordinator_20220219.hex
 Firmware file: Intel Hex
